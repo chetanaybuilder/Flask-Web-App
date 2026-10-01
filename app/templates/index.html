@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="hero" class="hero-section">
+    <div class="container">
+        <h1>Hi, I'm <span class="highlight">{{ name }}</span></h1>
+        <p class="subtitle">A passionate developer learning today's new technology</p>
+        <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about-section">
+    <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-card">
+                <p>I am {{ age }} years old.</p>
+                <p>My hobby is coding and learning new technology.</p>
+                <p>My dream is to travel to {{ dream | capitalize }}.</p>
+                <p>My favourite food is pizza.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="skills-section">
+    <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            {% for skill in skills %}
+            <div class="skill-tag">{{ skill }}</div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="projects-section">
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            {% for project in projects %}
+            <div class="project-card">
+                <h3>{{ project.name }}</h3>
+                <p>{{ project.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <div class="contact-links">
+            <a href="mailto:chetanaybuilder@gmail.com" class="btn btn-outline">Email Me</a>
+            <a href="https://github.com/chetanaybuilder" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
